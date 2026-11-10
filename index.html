@@ -1,1 +1,116 @@
 
+<!DOCTYPE html>
+<html lang="en">
+<head>
+<meta charset="UTF-8">
+<meta name="viewport" content="width=device-width, initial-scale=1.0">
+<title>Divyanshu Shukla ❤️</title>
+<style>
+*{box-sizing:border-box}
+body{
+ margin:0;
+ min-height:100vh;
+ font-family:Georgia,serif;
+ color:white;
+ text-align:center;
+ background:linear-gradient(135deg,#160016,#57002f,#19001d);
+ overflow-x:hidden;
+}
+.container{padding:45px 18px;max-width:600px;margin:auto}
+h1{color:#ff8dbb;font-size:34px;text-shadow:0 0 18px #ff2389}
+.heart{font-size:85px;animation:beat 1s infinite}
+@keyframes beat{50%{transform:scale(1.2)}}
+p{line-height:1.8;font-size:17px}
+.card{
+ background:#ffffff12;
+ border:1px solid #ff8dbb66;
+ border-radius:22px;
+ padding:25px 18px;
+ margin:22px 0;
+ box-shadow:0 0 25px #ff238933;
+}
+button{
+ border:0;border-radius:30px;padding:13px 25px;
+ margin:8px;font-size:16px;cursor:pointer;
+ background:#ff4f91;color:white;
+}
+button:hover{background:#ff176d}
+#letter{display:none}
+.floating{
+ position:fixed;bottom:-30px;
+ animation:float 6s linear infinite;
+ opacity:.7;pointer-events:none
+}
+@keyframes float{
+ to{transform:translateY(-110vh) rotate(360deg);opacity:0}
+}
+</style>
+</head>
+<body>
+<div class="container">
+
+<div class="heart">❤️</div>
+
+<h1>Divyanshu Shukla</h1>
+<p>Welcome To My Special Love Website 💕</p>
+
+<div class="card">
+<h2>💖 A Special Message</h2>
+<p>
+Some moments are special,<br>
+Some memories are beautiful,<br>
+And some people make life wonderful. ❤️
+</p>
+<button onclick="showLetter()">💌 Open Love Letter</button>
+
+<div id="letter">
+<h2>Dear Special Person ❤️</h2>
+<p>
+You are special in your own way.
+May your life always be filled
+with happiness, smiles and beautiful memories.
+<br><br>
+With love,<br>
+<strong>Divyanshu Shukla ❤️</strong>
+</p>
+</div>
+</div>
+
+<div class="card">
+<h2>💕 A Little Question</h2>
+<p>Do you like this special website?</p>
+<button onclick="answer('Thank you! You made my day ❤️')">Yes ❤️</button>
+<button onclick="answer('No problem! Keep smiling 😊')">No 😊</button>
+<h3 id="answer"></h3>
+</div>
+
+<div class="card">
+<h2>✨ Made With Love</h2>
+<p>Created by Divyanshu Shukla</p>
+<p>Keep Smiling & Stay Happy ❤️</p>
+</div>
+
+</div>
+
+<script>
+function showLetter(){
+ document.getElementById("letter").style.display="block";
+}
+function answer(message){
+ document.getElementById("answer").innerText=message;
+}
+function createHeart(){
+ const h=document.createElement("div");
+ h.className="floating";
+ h.innerText=["❤️","💕","💖","💗"][Math.floor(Math.random()*4)];
+ h.style.left=Math.random()*100+"vw";
+ h.style.fontSize=(18+Math.random()*25)+"px";
+ h.style.animationDuration=(4+Math.random()*4)+"s";
+ document.body.appendChild(h);
+ setTimeout(()=>h.remove(),8000);
+}
+setInterval(createHeart,500);
+</script>
+</body>
+</html>
+
